@@ -7,15 +7,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Head in the Clouds</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cloud-timer.css">
   <link rel="stylesheet" href="webcam-darkness/lighting.css">
 </head>
+
 
 <body class="tracker tracker-compact wizard">
 
   <main>
 
     <!-- HEADER -->
-
     <header class="topbar">
       <div class="brand">
         ☁ Head in the Clouds
@@ -27,6 +28,12 @@
       </button>
     </header>
 
+    <!-- ONE SHARED ANIMATED CLOUD -->
+    <section class="shared-cloud-section">
+      <div id="cloud-timer-mount"></div>
+      <p id="cloud-timer-percent">0% complete</p>
+    </section>
+
 
     <!-- PAGE 1: CAMERA PERMISSION -->
 
@@ -34,9 +41,11 @@
 
       <div class="welcome-content">
 
+
         <div class="hero-cloud">
-          <img src="Images/cloud.png" alt="Cloud">
+          <div id="cloud-timer-mount"></div>
         </div>
+
 
         <h1>Welcome!</h1>
 
@@ -140,11 +149,12 @@
 
       <div class="timer-hero">
 
+
         <div class="timer-cloud">
-          <img
-            src="Images/cloud.png"
-            alt="Your cloud">
+          <div id="cloud-timer-mount"></div>
         </div>
+        <p id="cloud-timer-percent">0% complete</p>
+          
 
         <div id="screen-timer" class="countdown">
           20:00
@@ -387,7 +397,7 @@
   </dialog>
 
   <!-- POPUP SCRIPT (the camera runs in offscreen.html) -->
-
+  <script src="cloud-timer.js"></script>
   <script type="module" src="tracker.js"></script>
 
 </body>

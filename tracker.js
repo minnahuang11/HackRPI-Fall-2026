@@ -79,6 +79,14 @@ function renderTimers() {
     ? Math.ceil(Math.max(0, t.awayLimit - t.awayTime) / 1000) * 1000
     : t.awayTime);
   $("screen-progress").style.width = `${Math.min(100, t.screenTime / t.screenLimit * 100)}%`;
+  
+  // Update the animated cloud using the background engine timer
+  const cloudRatio = t.screenLimit > 0
+    ? Math.min(1, Math.max(0, t.screenTime / t.screenLimit))
+    : 0;
+
+  window.updateCloudTimer?.(cloudRatio);
+
   $("away-progress").style.width = `${Math.min(100, t.awayTime / t.awayLimit * 100)}%`;
   $("timer-heading").textContent = onBreak ? "Time to look away!" : "Time to focus.";
   $("timer-description").textContent = onBreak
