@@ -1,8 +1,22 @@
 <!doctype html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>EyeEase tracker</title><link rel="stylesheet" href="style.css"></head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Head in the Clouds</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="cloud-timer.css">
+</head>
 <body class="tracker tracker-compact">
 <main>
   <h1>Head in the Clouds — screen-direction tracker</h1>
+    <!-- NEW CLOUD TIMER -->
+  <section class="cloud-timer-section">
+    <p id="cloud-timer-percent">0% complete</p>
+    <div id="cloud-timer-mount"></div>
+  </section>
   <p>Position the webcam normally, click Start, then look at your usual screen-reading area and click Calibrate. All processing stays in this tab.</p>
   <div class="buttons">
     <button id="start">
@@ -131,8 +145,17 @@
     </p>
 
   </div>
+
 </details>
 </main>
+
+<!-- Cloud timer animation -->
+<script src="cloud-timer.js"></script>
+
+<!-- Existing eye-tracking functionality -->
 <script type="module" src="tracker.js"></script>
+
 </body>
 </html>
+
+

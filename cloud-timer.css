@@ -1,0 +1,18 @@
+/* Head in the Clouds — image-layer timer component */
+.cloud-timer-widget { width: 100%; max-width: 360px; margin: 0 auto; }
+.cloud-timer-art { position: relative; width: 100%; aspect-ratio: 3 / 2; overflow: visible; isolation: isolate; }
+.cloud-timer-layer { position: absolute; inset: 0; display: block; width: 100%; height: 100%; pointer-events: none; user-select: none; }
+.cloud-timer-progress { z-index: 1; clip-path: inset(0 100% 0 0); }
+.cloud-timer-body { z-index: 2; }
+.cloud-timer-face { position: absolute; inset: 0; z-index: 3; transform: translate(0, 0); transition: transform 650ms ease-in-out; }
+.cloud-timer-eyes, .cloud-timer-mouth { width: 100%; height: 100%; }
+.cloud-timer-eyes { transform-origin: 50% 50%; }
+.cloud-timer-eyes.is-blinking { animation: cloud-timer-blink 420ms ease-in-out 1; }
+@keyframes cloud-timer-blink {
+  0%, 100% { transform: scaleY(1); }
+  40%, 60% { transform: scaleY(0.08); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cloud-timer-face { transition: none; }
+  .cloud-timer-eyes.is-blinking { animation: none; }
+}

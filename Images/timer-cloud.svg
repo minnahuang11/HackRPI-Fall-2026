@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="240" viewBox="0 0 360 240" role="img" aria-labelledby="cloud-title cloud-description">
+  <title id="cloud-title">Head in the Clouds timer character</title>
+  <desc id="cloud-description">A soft gray cloud with a dark border, a separate purple timer progress outline, two dot eyes, and a smiling mouth. All components are editable vectors.</desc>
+  <!-- Colors sampled/approximated from the supplied PNG -->
+  <defs>
+    <path id="cloud-perimeter" d="
+      M 37 149
+      C 36 128, 48 109, 65 101
+      C 74 96, 83 94, 93 93
+      C 93 67, 106 48, 127 40
+      C 146 33, 170 37, 186 52
+      C 204 42, 227 43, 247 51
+      C 270 60, 280 77, 283 94
+      C 304 100, 320 117, 327 139
+      C 334 163, 327 187, 315 200
+      C 306 211, 294 214, 269 215
+      C 215 219, 145 218, 99 213
+      C 60 209, 37 188, 37 149 Z"/>
+  </defs>
+
+  <!-- Main dark cloud silhouette: complete unfilled timer border -->
+  <use id="cloud-outline-base" href="#cloud-perimeter" fill="#37383D"/>
+
+  <!-- Inner lower-right gray shading, preserved separately from the PNG -->
+  <path id="cloud-shadow" fill="#B7BAC3" d="
+    M 68 136
+    C 80 116, 102 111, 115 112
+    C 118 87, 136 67, 156 70
+    C 169 71, 179 80, 182 83
+    C 196 71, 220 69, 238 81
+    C 251 89, 256 97, 254 107
+    C 277 104, 298 118, 304 137
+    C 308 153, 307 169, 299 182
+    C 282 196, 254 196, 208 197
+    C 155 197, 99 190, 72 177
+    C 58 166, 57 152, 68 136 Z"/>
+
+  <!-- Light cloud face/body silhouette -->
+  <path id="cloud-body" fill="#E4E4E4" d="
+    M 64 146
+    C 64 129, 79 121, 109 118
+    C 107 94, 120 76, 139 70
+    C 155 64, 169 73, 180 83
+    C 200 72, 222 72, 237 82
+    C 248 89, 256 102, 253 108
+    C 266 109, 275 115, 280 120
+    C 278 141, 270 158, 257 169
+    C 236 183, 202 189, 158 189
+    C 111 188, 79 183, 68 170
+    C 63 162, 62 154, 64 146 Z"/>
+
+  <!-- Fine internal dark contour along the scalloped top; independent of progress stroke -->
+  <path id="cloud-inner-line" d="
+    M 63 119
+    C 75 113, 94 112, 109 113
+    C 110 91, 120 76, 140 69
+    C 157 64, 170 72, 181 82
+    C 201 71, 223 71, 238 82
+    C 249 89, 257 101, 253 109
+    C 271 108, 291 119, 304 137"
+    fill="none" stroke="#37383D" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Animated timer path: stroke-dashoffset 100 = 0%, 0 = 100%. -->
+  <path id="cloud-outline-progress" d="
+      M 37 149
+      C 36 128, 48 109, 65 101
+      C 74 96, 83 94, 93 93
+      C 93 67, 106 48, 127 40
+      C 146 33, 170 37, 186 52
+      C 204 42, 227 43, 247 51
+      C 270 60, 280 77, 283 94
+      C 304 100, 320 117, 327 139
+      C 334 163, 327 187, 315 200
+      C 306 211, 294 214, 269 215
+      C 215 219, 145 218, 99 213
+      C 60 209, 37 188, 37 149 Z"
+       fill="none" stroke="#93A2D2" stroke-width="13"
+       stroke-linejoin="round" stroke-linecap="round"
+       stroke-dasharray="2000" stroke-dashoffset="2000"/>
+
+  <!-- Entire face can be shifted a few pixels horizontally via CSS/JS -->
+  <g id="cloud-face" fill="#2D2F39">
+    <g id="cloud-eyes">
+      <ellipse id="left-eye" cx="143" cy="121.5" rx="9.5" ry="9.5"/>
+      <ellipse id="right-eye" cx="211" cy="121.5" rx="9.5" ry="9.5"/>
+    </g>
+    <path id="cloud-mouth" d="M 164 140 C 168 151, 183 153, 188 141"
+          fill="none" stroke="#2D2F39" stroke-width="5.5"
+          stroke-linecap="round"/>
+  </g>
+</svg>

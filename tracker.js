@@ -1,7 +1,7 @@
 import { FaceLandmarker, FilesetResolver, DrawingUtils } from './vendor/vision_bundle.mjs';
 import { AttentionDetector } from './attention.js';
 
-const SCREEN_LIMIT = 20 * 60 * 1000;
+const SCREEN_LIMIT = 0.1 * 60 * 1000;
 const AWAY_LIMIT = 20 * 1000;
 
 let screenTime = 0;
@@ -143,6 +143,7 @@ function formatTime(milliseconds) {
     );
 }
 
+
 function updateTimerDisplay() {
     $("screen-timer").textContent = formatTime(screenTime);
     $("away-timer").textContent = formatTime(awayTime);
@@ -150,9 +151,15 @@ function updateTimerDisplay() {
     $("screen-progress").style.width =
         `${(screenTime / SCREEN_LIMIT) * 100}%`;
 
+    // NEW: Update the cloud's purple progress border
+    if (window.updateCloudTimer) {
+        window.updateCloudTimer(screenTime / SCREEN_LIMIT);
+    }
+
     $("away-progress").style.width =
         `${(awayTime / AWAY_LIMIT) * 100}%`;
 }
+
 
 function updateTimers(now) {
     if (lastTimerUpdate === null) {
